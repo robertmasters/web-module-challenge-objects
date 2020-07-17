@@ -82,7 +82,7 @@ console.log(reviews);
 
 // Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
 
-reviews.push.feedback = "this place is chill with really cool people, great for getting work done on weekdays";
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays" ;
 console.log(reviews[7])
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
@@ -97,9 +97,12 @@ and should return a string in the format `{name} gave the restaurant a {rating},
  * For example, if getReviewByIndex is invoked with reviews and the number 0
  * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
-function getReviewByIndex(reviews, index) {
-    /* code here */
+function getReviewByIndex(arr, index) { // used to be, function getReviewByIndex(reviews, index) but i changed reviews to arr, because it made more sense to me this way, and looked less confusing.
+    return arr[index].name+' gave the restaurant a '+ arr[index].rating+ ' and their feedback was: '+arr[index].feedback;
   }
+  console.log(reviews[0]);
+  console.log(getReviewByIndex(reviews, 0));//text console
+
   
 
 /* Task 7: Write a function to get information about the most recent review called `getLastReview`
@@ -111,9 +114,12 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
-function getLastReview(/* code here */) {
-    /* code here */
+function getLastReview(arr) {
+  index = arr.length-1;
+  return arr[index].name+' gave the restaurant a '+ arr[index].rating+ ' and their feedback was: '+arr[index].feedback;
   } 
+
+console.log(getLastReview(reviews)); // will give my latest addition because on task 5 i made a new addision and that addision will be the most recent addition not the one by Reyna, if I comment out task 5 i will get the last review that this task is referring to in the for example part.
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
